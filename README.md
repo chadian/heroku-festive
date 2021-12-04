@@ -42,7 +42,7 @@ EXAMPLE
   $ heroku festive apps:info --app my-heroku-app
 ```
 
-_See code: [src/commands/festive.ts](https://github.com/chadian/heroku-festive/blob/v0.1.0/src/commands/festive.ts)_
+_See code: [src/commands/festive.ts](https://github.com/chadian/heroku-festive/blob/v0.1.1/src/commands/festive.ts)_
 
 ## `heroku firelog`
 
@@ -53,5 +53,5 @@ USAGE
   $ heroku firelog
 ```
 
-_See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.1.0/src/commands/firelog.ts)_
+_See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.1.1/src/commands/firelog.ts)_
 <!-- commandsstop -->

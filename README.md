@@ -1,30 +1,28 @@
 heroku-festive
 ================
+*Note: Not affiliated with Heroku, just a fun idea I had*
 
-
-
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/heroku-festive.svg)](https://npmjs.org/package/heroku-festive)
-[![Downloads/week](https://img.shields.io/npm/dw/heroku-festive.svg)](https://npmjs.org/package/heroku-festive)
-[![License](https://img.shields.io/npm/l/heroku-festive.svg)](https://github.com/chadian/heroku-festive/blob/master/package.json)
+A way to bring festivities to your Heroku CLI this winter season.
+This is an oclif plugin comaptible with the heroku cli.
 
 <!-- toc -->
-* [Usage](#usage)
+* [Installation](#installation)
 * [Commands](#commands)
 <!-- tocstop -->
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g heroku-festive
-$ heroku COMMAND
-running command...
-$ heroku (-v|--version|version)
-heroku-festive/0.0.0 darwin-x64 node-v14.17.3
-$ heroku --help [COMMAND]
-USAGE
-  $ heroku COMMAND
-...
+* [Installation](#installation)
+* [Commands](#commands)
+
+# Installation
+
+Pre-requisite: The heroku cli must be installed already ([documentation](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)).
+
+Install the heroku-festive plugin from the command-line by running:
+```shell
+heroku plugins:install heroku-festive
 ```
+
+To verify that it is installed run `heroku plugins` and it should be included in the list.
+
 <!-- usagestop -->
 # Commands
 <!-- commands -->
@@ -44,6 +42,8 @@ EXAMPLE
   $ heroku festive apps:info --app my-heroku-app
 ```
 
+_See code: [src/commands/festive.ts](https://github.com/chadian/heroku-festive/blob/v0.1.0/src/commands/festive.ts)_
+
 ## `heroku firelog`
 
 stay warm this winter
@@ -53,5 +53,5 @@ USAGE
   $ heroku firelog
 ```
 
-_See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.0.0/src/commands/firelog.ts)_
+_See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.1.0/src/commands/firelog.ts)_
 <!-- commandsstop -->

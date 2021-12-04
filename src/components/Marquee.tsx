@@ -24,7 +24,7 @@ export function Marquee({
   random = random ?? true;
   const refreshRate = 1000 / (fps ?? 10);
   direction = direction ?? "RIGHT";
-  const ref = useRef();
+  const ref: any = useRef();
   const [stage, setStage] = useState({ position: 0, width: 0 });
 
   const createFrame = ({

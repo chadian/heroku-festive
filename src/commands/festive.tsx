@@ -68,13 +68,22 @@ $ heroku festive apps:info --app my-heroku-app
           stdio: ["inherit", "pipe", "pipe"],
         });
 
-        commandProcess.stderr.on("data", (data) => {
+        const onStdErr = (data: any) => {
           setError((prev) => prev + data);
-        });
+        };
 
-        commandProcess.stdout.on("data", (data) => {
+        const onStdOut = (data: any) => {
           setResult((prev) => prev + data);
-        });
+        };
+
+        commandProcess.stderr.on("data", onStdErr);
+        commandProcess.stdout.on("data", onStdOut);
+
+        return () => {
+          commandProcess.kill()
+          commandProcess.stderr.off("data", onStdErr);
+          commandProcess.stdout.off("data", onStdOut);
+        };
       }, []);
 
       const OUTPUT_HEIGHT = 20;

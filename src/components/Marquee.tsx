@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Static, render, Text, Box, measureElement, useInput } from "ink";
+import { Box, measureElement } from "ink";
 import { useState, useEffect, useRef } from "react";
 import { ColorText } from "./ColorText";
 

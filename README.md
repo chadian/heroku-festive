@@ -29,7 +29,7 @@ To verify that it is installed run `heroku plugins` and it should be included in
 
 make any heroku command more festive by replacing `heroku command` with `heroku festive command`
 
-![Screenshot of heroku festive command](./static/heroku-festive-command.png)
+![Screenshot of heroku festive command](./static/heroku-festive-command.gif)
 
 ```
 USAGE
@@ -44,7 +44,7 @@ EXAMPLE
 
 stay warm this winter
 
-![Screenshot of heroku firelog command](./static/heroku-firelog-command.png)
+![Screenshot of heroku firelog command](./static/heroku-firelog-command.gif)
 
 ```
 USAGE

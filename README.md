@@ -16,51 +16,41 @@ heroku-festive
 <!-- usage -->
 ```sh-session
 $ npm install -g heroku-festive
-$ oclif-example COMMAND
+$ heroku COMMAND
 running command...
-$ oclif-example (-v|--version|version)
+$ heroku (-v|--version|version)
 heroku-festive/0.0.0 darwin-x64 node-v14.17.3
-$ oclif-example --help [COMMAND]
+$ heroku --help [COMMAND]
 USAGE
-  $ oclif-example COMMAND
+  $ heroku COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example festive`](#oclif-example-festive)
-* [`oclif-example firelog [FILE]`](#oclif-example-firelog-file)
+* [`heroku festive`](#heroku-festive)
+* [`heroku firelog`](#heroku-firelog)
 
-## `oclif-example festive`
+## `heroku festive`
 
-describe the command here
+make any heroku command more festive
 
 ```
 USAGE
-  $ oclif-example festive
-
-OPTIONS
-  --animated
+  $ heroku festive
 
 EXAMPLE
-  $ oclif-example hello
-  hello world from ./src/hello.ts!
+  $ heroku festive apps
+  $ heroku festive apps:info --app my-heroku-app
 ```
 
-_See code: [src/commands/festive.ts](https://github.com/chadian/heroku-festive/blob/v0.0.0/src/commands/festive.ts)_
+## `heroku firelog`
 
-## `oclif-example firelog [FILE]`
-
-describe the command here
+stay warm this winter
 
 ```
 USAGE
-  $ oclif-example firelog [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ heroku firelog
 ```
 
 _See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.0.0/src/commands/firelog.ts)_

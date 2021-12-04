@@ -31,7 +31,7 @@ const Marquees = [
 });
 
 export default class Holidays extends Command {
-  static description = "make any heroku command more festive";
+  static description = "make any heroku command more festive by replacing `heroku command` with `heroku festive commannd`";
   static strict = false;
 
   static examples = [

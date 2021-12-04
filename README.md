@@ -9,8 +9,6 @@ This is an oclif plugin comaptible with the heroku cli.
 * [Installation](#installation)
 * [Commands](#commands)
 <!-- tocstop -->
-* [Installation](#installation)
-* [Commands](#commands)
 
 # Installation
 
@@ -23,15 +21,15 @@ heroku plugins:install heroku-festive
 
 To verify that it is installed run `heroku plugins` and it should be included in the list.
 
-<!-- usagestop -->
 # Commands
-<!-- commands -->
 * [`heroku festive`](#heroku-festive)
 * [`heroku firelog`](#heroku-firelog)
 
 ## `heroku festive`
 
-make any heroku command more festive
+make any heroku command more festive by replacing `heroku command` with `heroku festive command`
+
+![Screenshot of heroku festive command](./static/heroku-festive-command.png)
 
 ```
 USAGE
@@ -42,16 +40,13 @@ EXAMPLE
   $ heroku festive apps:info --app my-heroku-app
 ```
 
-_See code: [src/commands/festive.ts](https://github.com/chadian/heroku-festive/blob/v0.1.2/src/commands/festive.ts)_
-
 ## `heroku firelog`
 
 stay warm this winter
+
+![Screenshot of heroku firelog command](./static/heroku-firelog-command.png)
 
 ```
 USAGE
   $ heroku firelog
 ```
-
-_See code: [src/commands/firelog.ts](https://github.com/chadian/heroku-festive/blob/v0.1.2/src/commands/firelog.ts)_
-<!-- commandsstop -->

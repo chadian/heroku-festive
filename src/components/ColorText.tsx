@@ -1,7 +1,7 @@
 import * as React from "react";
-import * as chalk from "chalk";
-import { Static, render, Text, Box, measureElement, useInput } from "ink";
-import { useState, useEffect, useRef } from "react";
+import chalk from "chalk";
+import { Text } from "ink";
+import { useState, useEffect } from "react";
 
 export function ColorText({
   str,

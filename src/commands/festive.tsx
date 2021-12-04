@@ -9,7 +9,7 @@ import { FlashyText } from "../components/FlashyText";
 import { Marquee } from "../components/Marquee";
 import { KeyboardArrows } from "../components/KeyboardArrows";
 import { ScrollBar } from "../components/Scrollbar";
-import * as chalk from "chalk";
+import chalk from "chalk";
 
 const Marquees = [
   "H A P P Y   H O L I D A Y S     ",

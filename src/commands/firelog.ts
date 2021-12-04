@@ -7,7 +7,7 @@ export default class Firelog extends Command {
 
   async run() {
     await this.log("Loading fire...");
-    await terminalImage.gifFile(resolve(__dirname, "../fireplace-fire.gif"), {
+    await terminalImage.gifFile(resolve(__dirname, "../../static/fireplace-fire.gif"), {
       width: "50%",
       height: "50%",
     });

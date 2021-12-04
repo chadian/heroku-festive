@@ -9,7 +9,7 @@ import { FlashyText } from "../components/FlashyText";
 import { Marquee } from "../components/Marquee";
 import { KeyboardArrows } from "../components/KeyboardArrows";
 import { ScrollBar } from "../components/Scrollbar";
-import * as chalk from 'chalk';
+import * as chalk from "chalk";
 
 const Marquees = [
   "H A P P Y   H O L I D A Y S     ",
@@ -109,27 +109,42 @@ $ heroku festive apps:info --app my-heroku-app
       const TERMINAL_WIDTH = 100;
       const TERMINAL_HEIGHT = 50;
       const underWidth = columns < TERMINAL_WIDTH;
-      const underHeight = rows < TERMINAL_HEIGHT
+      const underHeight = rows < TERMINAL_HEIGHT;
+      const TERMINAL_PADDING = 2;
+      const RESULTS_WIDTH = TERMINAL_WIDTH - 2 * TERMINAL_PADDING;
+
+      const resultsWindowBorder = "-".repeat(RESULTS_WIDTH - 2);
+
       if (underWidth || underHeight) {
         return (
           <Box margin={1} alignItems="center" flexDirection="column">
             <Box>
               <Text>
-                {chalk.yellow('⛄️ Festivities require space! Your terminal window is too small, please resize.')}
+                {chalk.yellow(
+                  "⛄️ Festivities require space! Your terminal window is too small, please resize."
+                )}
               </Text>
             </Box>
             <Text>
-              {chalk.bold('Required')}    width: {TERMINAL_WIDTH}   height: {TERMINAL_HEIGHT}
+              {chalk.bold("Required")} width: {TERMINAL_WIDTH} height:{" "}
+              {TERMINAL_HEIGHT}
             </Text>
             <Text>
-              {chalk.bold('Currently')}   width: {chalk[underWidth ? 'red' : 'green'](process.stdout.columns)}   height: {chalk[underHeight ? 'red' : 'green'](process.stdout.rows)}
+              {chalk.bold("Currently")} width:{" "}
+              {chalk[underWidth ? "red" : "green"](process.stdout.columns)}{" "}
+              height:{" "}
+              {chalk[underHeight ? "red" : "green"](process.stdout.rows)}
             </Text>
           </Box>
         );
       }
 
       return (
-        <Box width={TERMINAL_WIDTH - 2} flexDirection="column" margin={2}>
+        <Box
+          width={TERMINAL_WIDTH}
+          flexDirection="column"
+          padding={TERMINAL_PADDING}
+        >
           <Box marginBottom={2}>
             <Box marginRight={2}>
               <FlashyText
@@ -160,7 +175,8 @@ $ heroku festive apps:info --app my-heroku-app
                   </Box>
                 ) : null}
                 <Box justifyContent="space-between" marginTop={1} flexGrow={1}>
-                  <Box flexGrow={1}>
+                  <Box flexDirection="column" flexGrow={1}>
+                    <Text>{resultsWindowBorder}</Text>
                     <ColorText
                       random={true}
                       colors={["green", "red"]}
@@ -170,6 +186,7 @@ $ heroku festive apps:info --app my-heroku-app
                           : "Awaiting communication from the north pole..."
                       }
                     />
+                    <Text>{resultsWindowBorder}</Text>
                   </Box>
                   <Box flexShrink={1} marginLeft={2}>
                     {didCap ? (

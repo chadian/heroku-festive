@@ -35,13 +35,22 @@ export function KeyboardArrows() {
 
   return (
     <Box flexDirection="column">
-      <Box><Text>Use up/down arrow keys to scroll contents</Text></Box>
+      <Box>
+        <Text>Use up/down arrow keys to scroll contents</Text>
+      </Box>
       <Box flexDirection="row">
         <Box>
-          <Text color={keys.up ? "red" : "white"}>[ UP ⬆︎ ]</Text>
+          <Text color="red" inverse={keys.up}>
+            [ UP ⬆︎ ]
+          </Text>
         </Box>
         <Box>
-          <Text color={keys.down ? "red" : "white"}>[ DOWN ⬇︎ ]</Text>
+          <Text color="white"> </Text>
+        </Box>
+        <Box>
+          <Text color="red" inverse={keys.down}>
+            [ DOWN ⬇︎ ]
+          </Text>
         </Box>
       </Box>
     </Box>

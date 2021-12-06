@@ -1,6 +1,6 @@
 {
   "name": "heroku-festive",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Chad Carbert @chadian",
   "bugs": "https://github.com/chadian/heroku-festive/issues",
   "dependencies": {

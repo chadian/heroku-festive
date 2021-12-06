@@ -116,10 +116,10 @@ $ heroku festive apps:info --app my-heroku-app
       });
 
       const TERMINAL_WIDTH = 100;
-      const TERMINAL_HEIGHT = 50;
+      const TERMINAL_HEIGHT = 40;
       const underWidth = columns < TERMINAL_WIDTH;
       const underHeight = rows < TERMINAL_HEIGHT;
-      const TERMINAL_PADDING = 2;
+      const TERMINAL_PADDING = 1;
       const RESULTS_WIDTH = TERMINAL_WIDTH - 2 * TERMINAL_PADDING;
 
       const resultsWindowBorder = "-".repeat(RESULTS_WIDTH - 2);

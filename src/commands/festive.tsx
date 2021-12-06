@@ -10,7 +10,6 @@ import { Marquee } from "../components/Marquee";
 import { KeyboardArrows } from "../components/KeyboardArrows";
 import { ScrollBar } from "../components/Scrollbar";
 import chalk from "chalk";
-import { ForegroundColor } from "chalk";
 
 const marquees = (colors?: string[]) => [
   "H A P P Y   H O L I D A Y S     ",

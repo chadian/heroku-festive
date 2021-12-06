@@ -14,7 +14,7 @@ export function FlashyText({
   random?: boolean;
 }) {
   random = random ?? true;
-  const randomColor = () => colors[Math.round(Math.random() * colors.length)];
+  const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
   const [color, setColor] = useState(randomColor());
 
   const sequentialColor = () => {

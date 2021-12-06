@@ -10,8 +10,9 @@ import { Marquee } from "../components/Marquee";
 import { KeyboardArrows } from "../components/KeyboardArrows";
 import { ScrollBar } from "../components/Scrollbar";
 import chalk from "chalk";
+import { ForegroundColor } from "chalk";
 
-const Marquees = [
+const marquees = (colors?: string[]) => [
   "H A P P Y   H O L I D A Y S     ",
   "      S E A S O N S   G R E E T I N G S     ",
   "   H A P P Y   N E W   Y E A R     ",
@@ -21,7 +22,7 @@ const Marquees = [
   return (
     <Marquee
       key={i}
-      colors={["red", "green", "white", "blue"]}
+      colors={colors?.length ? colors : ["red", "green", "white", "blue"]}
       fps={10}
       direction={i % 2 === 0 ? "RIGHT" : "LEFT"}
       str={str}
@@ -31,18 +32,36 @@ const Marquees = [
 });
 
 export default class Holidays extends Command {
-  static description = "make any heroku command more festive by replacing `heroku command` with `heroku festive commannd`";
+  static description =
+    "make any heroku command more festive by replacing `heroku command` with `heroku festive commannd`";
   static strict = false;
+
+  static flags = {
+    color: flags.string({
+      multiple: true,
+      options: [
+        "red",
+        "green",
+        "yellow",
+        "blue",
+        "magenta",
+        "cyan",
+        "white",
+      ],
+    }),
+  };
 
   static examples = [
     `$ heroku festive apps
 $ heroku festive apps:info --app my-heroku-app
+$ heroku festive --color red --color green -- apps:info --app my-heroku-app
 `,
   ];
 
   async run() {
     const { argv, flags } = this.parse(Holidays);
     const herokuLogo = logo();
+    const colors = flags.color ?? [];
 
     const ContainerComponent = () => {
       const [result, setResult] = useState<string>("");
@@ -80,7 +99,7 @@ $ heroku festive apps:info --app my-heroku-app
         commandProcess.stdout.on("data", onStdOut);
 
         return () => {
-          commandProcess.kill()
+          commandProcess.kill();
           commandProcess.stderr.off("data", onStdErr);
           commandProcess.stdout.off("data", onStdOut);
         };
@@ -158,11 +177,11 @@ $ heroku festive apps:info --app my-heroku-app
             <Box marginRight={2}>
               <FlashyText
                 str={herokuLogo}
-                colors={["red", "green", "white", "blue"]}
+                colors={colors.length ? colors : ["red", "green", "white", "blue"]}
               />
             </Box>
             <Box flexDirection="column" flexGrow={1}>
-              {[...Marquees]}
+              {[...marquees(colors)]}
             </Box>
           </Box>
           <Box>
@@ -173,7 +192,7 @@ $ heroku festive apps:info --app my-heroku-app
               <Box flexDirection="column" justifyContent="space-between">
                 <ColorText
                   random={true}
-                  colors={["green", "red", "blue"]}
+                  colors={colors.length ? colors : ["green", "red", "blue"]}
                   str={`===${
                     error || result ? "" : " Running"
                   } heroku ${argv.join(" ")} ===`}
@@ -188,7 +207,7 @@ $ heroku festive apps:info --app my-heroku-app
                     <Text>{resultsWindowBorder}</Text>
                     <ColorText
                       random={true}
-                      colors={["green", "red"]}
+                      colors={colors.length ? colors : ["green", "red"]}
                       str={
                         result
                           ? cappedResult
@@ -213,7 +232,7 @@ $ heroku festive apps:info --app my-heroku-app
             <Box marginTop={2}>
               <ColorText
                 random={true}
-                colors={["green", "red"]}
+                colors={colors.length ? colors : ["green", "red"]}
                 str="Ctrl+C to stop the joy..."
               />
             </Box>

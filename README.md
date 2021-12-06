@@ -35,9 +35,13 @@ make any heroku command more festive by replacing `heroku command` with `heroku 
 USAGE
   $ heroku festive
 
+OPTIONS
+  --color=red|green|yellow|blue|magenta|cyan|white
+
 EXAMPLE
   $ heroku festive apps
   $ heroku festive apps:info --app my-heroku-app
+  $ heroku festive --color red --color green -- apps:info --app my-heroku-app
 ```
 
 ## `heroku firelog`
